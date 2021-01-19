@@ -1,0 +1,33 @@
+"let g:autopep8_on_save = 1
+"
+"" auto formatter for python
+function! Preserve(command)
+    " Save the last search.
+    let search = @/
+    " Save the current cursor position.
+    let cursor_position = getpos('.')
+    " Save the current window position.
+    normal! H
+    let window_position = getpos('.')
+    call setpos('.', cursor_position)
+    " Execute the command.
+    execute a:command
+    " Restore the last search.
+    let @/ = search
+    " Restore the previous window position.
+    call setpos('.', window_position)
+    normal! zt
+    " Restore the previous cursor position.
+    call setpos('.', cursor_position)
+endfunction
+
+function! Autopep8()
+    "--ignote=E501: Ignore completing the length of a line."
+    call Preserve(':silent %!autopep8 --ignore=E501 -')
+endfunction
+
+augroup python_auto_lint
+  autocmd!
+  autocmd BufWrite *.py :call Autopep8()
+augroup END
+
