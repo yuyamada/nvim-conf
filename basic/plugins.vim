@@ -30,6 +30,7 @@ Plug 'fatih/vim-go'  "golang
 Plug 'elzr/vim-json'  "json
 Plug 'rhysd/vim-clang-format'  "c/c++ formatter
 "Plug 'quark-zju/vim-cpp-auto-include'  "c/c++ auto include
+Plug 'chase/vim-ansible-yaml'
 
 call plug#end()
 

@@ -72,5 +72,3 @@ set splitbelow
 set splitright
 
 syntax on  "syntax highlight
-
-
