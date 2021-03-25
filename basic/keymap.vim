@@ -58,4 +58,4 @@ nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
 "文字列検索
-nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>  " ESCキー2度押しでハイライトの切り替え
+"nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>  " ESCキー2度押しでハイライトの切り替え

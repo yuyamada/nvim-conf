@@ -72,3 +72,6 @@ set splitbelow
 set splitright
 
 syntax on  "syntax highlight
+
+set t_u7=
+set t_RV=
