@@ -24,12 +24,18 @@ Plug 'kana/vim-submode' " ウィンドウ関連サブモードを定義
 Plug 'scrooloose/syntastic'  "シンタックスハイライト
 Plug 'Shougo/deoplete.nvim'  "コードの自動補完
 Plug 'Shougo/deoppet.nvim'  "スニペット補完機能
-Plug 'zxqfl/tabnine-vim'  "自動補完
+"Plug 'zxqfl/tabnine-vim'  "自動補完
 Plug 'tell-k/vim-autopep8'  "python
-Plug 'fatih/vim-go'  "golang
+"Plug 'fatih/vim-go'  "golang
 Plug 'elzr/vim-json'  "json
 Plug 'rhysd/vim-clang-format'  "c/c++ formatter
 "Plug 'quark-zju/vim-cpp-auto-include'  "c/c++ auto include
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-goimports'
 
 call plug#end()
 
