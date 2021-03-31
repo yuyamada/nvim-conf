@@ -1,3 +1,6 @@
+"spaceをleaderに設定
+let mapleader = "\<Space>"
+
 "jjでnormal mode
 inoremap <silent> jj <ESC>
 

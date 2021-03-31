@@ -22,6 +22,10 @@ if _curfile == 'Makefile'
   set noexpandtab
 endif
 
+"メニュー
+set wildmenu
+set wildmode=full
+
 " 文字列検索
 set incsearch " インクリメンタルサーチ. １文字入力毎に検索を行う
 set ignorecase " 検索パターンに大文字小文字を区別しない
