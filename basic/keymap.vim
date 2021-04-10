@@ -62,6 +62,8 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 noremap <C-n> gt
 noremap <C-p> gT
 noremap <C-t> :tabnew<CR>
+noremap <Leader>w :q<CR>
+
 
 
 "文字列検索

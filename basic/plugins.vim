@@ -14,6 +14,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Install plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'airblade/vim-gitgutter'  "変更箇所を表示
 Plug 'cocopon/iceberg.vim'  "テーマ
 Plug 'ryanoasis/vim-devicons'  "icon表示
 Plug 'itchyny/lightline.vim'  "ステータスラインの表示内容強化
@@ -36,10 +37,14 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
+Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
 Plug 'mattn/vim-lsp-settings'
 "Plug 'mattn/vim-goimports'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'  "gitコマンド
+Plug 'tpope/vim-surround'  "開き/閉じカッコをまとめて選択
 
 call plug#end()
 

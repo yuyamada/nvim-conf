@@ -3,13 +3,14 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     nmap <leader>d :tab LspDefinition<CR>
+
     nmap <leader>h <plug>(lsp-hover)
     "nmap <leader>s <plug>(lsp-document-symbol-search)
     "nmap <leader>S <plug>(lsp-workspace-symbol-search)
     nmap <leader>r <plug>(lsp-references)
     nmap <leader>i <plug>(lsp-implementation)
     nmap <leader>t <plug>(lsp-type-definition)
-    nmap <leader>r <plug>(lsp-rename)
+    nmap <leader>rn <plug>(lsp-rename)
     nmap <leader>h <plug>(lsp-previous-diagnostic)
     nmap <leader>l <plug>(lsp-next-diagnostic)
     "inoremap <buffer> <expr><c-f> lsp#scroll(+4)
