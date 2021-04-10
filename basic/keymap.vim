@@ -10,8 +10,8 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
-noremap <C-j> gt
-noremap <C-k> gT
+noremap <C-j> :bnext<CR>
+noremap <C-k> :bprev<CR>
 
 "insert mode中Ctrl+hjklで移動
 inoremap <C-h> <Left>

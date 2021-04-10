@@ -1,10 +1,12 @@
-noremap ff :Files<CR>
-noremap fg :GFiles<CR>
-noremap fG :GFiles?<CR>
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+command! ProjectFiles execute 'Files' s:find_git_root()
+noremap ff :ProjectFiles<CR>
 noremap fb :Buffer<CR>
 noremap fh :History<CR>
 " [Buffers] Jump to the existing window if possible
-let g:fzf_buffers_jump = 1
+let g:fzf_buffers_jump = 0
 " [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 " [Tags] Command to generate tags file

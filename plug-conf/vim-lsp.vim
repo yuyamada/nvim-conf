@@ -2,8 +2,7 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <leader>d :tab LspDefinition<CR>
-
+    nmap <leader>d :vsp<cr>:LspDefinition<cr>
     nmap <leader>h <plug>(lsp-hover)
     "nmap <leader>s <plug>(lsp-document-symbol-search)
     "nmap <leader>S <plug>(lsp-workspace-symbol-search)
