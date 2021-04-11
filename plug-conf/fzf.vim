@@ -2,9 +2,10 @@ function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
-noremap ff :ProjectFiles<CR>
-noremap fb :Buffer<CR>
-noremap fh :History<CR>
+" noremap <Leader><Leader> :ProjectFiles<CR>
+noremap <Leader><Leader> :Files<CR>
+noremap <Leader>b :Buffer<CR>
+noremap <Leader>h :History<CR>
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 0
 " [[B]Commits] Customize the options used by 'git log':

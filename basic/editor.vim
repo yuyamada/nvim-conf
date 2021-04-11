@@ -50,6 +50,8 @@ set completeopt=menu
 set wildmenu " コマンドモードの補完
 set history=5000 " 保存するコマンド履歴の数
 
+" クリップボード連携
+set clipboard+=unnamed
 
 " ペースト時の自動インデントを無効化
 if &term =~ "xterm"
@@ -66,9 +68,9 @@ if &term =~ "xterm"
 endif
 
 "カレントディレクトリ設定(自動的に開いたファイルのディレクトリに移動)
-if exists('+autochdir')
-  set autochdir
-endif
+" if exists('+autochdir')
+"   set autochdir
+" endif
 
 " 新しいウィンドウを下に開く
 set splitbelow
@@ -76,6 +78,3 @@ set splitbelow
 set splitright
 
 syntax on  "syntax highlight
-
-set t_u7=
-set t_RV=

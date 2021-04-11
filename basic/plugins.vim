@@ -19,8 +19,9 @@ Plug 'cocopon/iceberg.vim'  "テーマ
 Plug 'ryanoasis/vim-devicons'  "icon表示
 Plug 'itchyny/lightline.vim'  "ステータスラインの表示内容強化
 Plug 'Yggdroot/indentLine'  "インデントの可視化
-Plug 'scrooloose/nerdtree'  "ファイルをtree表示
-Plug 'jistr/vim-nerdtree-tabs' "タブページでtreeを同期
+"Plug 'scrooloose/nerdtree'  "ファイルをtree表示
+"Plug 'jistr/vim-nerdtree-tabs' "タブページでtreeを同期
+Plug 'lambdalisue/fern.vim'  " ファイラ
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'  "あいまい検索
 Plug 'kana/vim-submode' " ウィンドウ関連サブモードを定義
@@ -45,6 +46,7 @@ Plug 'mattn/vim-lsp-settings'
 "Plug 'mattn/vim-goimports'
 Plug 'tpope/vim-fugitive'  "gitコマンド
 Plug 'tpope/vim-surround'  "開き/閉じカッコをまとめて選択
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
