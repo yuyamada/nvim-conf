@@ -8,6 +8,9 @@ let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1
 let g:loaded_netrwFileHandlers = 1
 
+"nerd font
+let g:fern#renderer = "nerdfont"
+
 augroup my-fern-hijack
   autocmd!
   autocmd BufEnter * ++nested call s:hijack_directory()
@@ -23,9 +26,10 @@ function! s:hijack_directory() abort
 endfunction
 
 " Custom settings and mappings.
-let g:fern#disable_default_mappings = 1
+"let g:fern#disable_default_mappings = 1
 
-noremap <silent> q :Fern . -reveal=% -drawer -toggle<CR>
+"noremap <silent> q :Fern . -reveal=% -drawer -toggle<CR><C-w>=
+noremap <silent> q :Fern . -reveal=%<CR><C-w>=
 
 function! FernInit() abort
   nmap <buffer><expr>
@@ -36,7 +40,8 @@ function! FernInit() abort
         \   "\<Plug>(fern-action-collapse)",
         \ )
   nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
-  nmap <buffer> o <Plug>(fern-my-open-expand-collapse)
+  " nmap <buffer> o <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> o <Plug>(fern-action-open)
   nmap <buffer> n <Plug>(fern-action-new-path)
   nmap <buffer> d <Plug>(fern-action-remove)
   nmap <buffer> m <Plug>(fern-action-move)

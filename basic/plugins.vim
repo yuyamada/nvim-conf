@@ -16,12 +16,16 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'  "変更箇所を表示
 Plug 'cocopon/iceberg.vim'  "テーマ
-Plug 'ryanoasis/vim-devicons'  "icon表示
+"Plug 'ryanoasis/vim-devicons'  "icon表示
 Plug 'itchyny/lightline.vim'  "ステータスラインの表示内容強化
 Plug 'Yggdroot/indentLine'  "インデントの可視化
 "Plug 'scrooloose/nerdtree'  "ファイルをtree表示
 "Plug 'jistr/vim-nerdtree-tabs' "タブページでtreeを同期
 Plug 'lambdalisue/fern.vim'  " ファイラ
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern-hijack.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'  "あいまい検索
 Plug 'kana/vim-submode' " ウィンドウ関連サブモードを定義
