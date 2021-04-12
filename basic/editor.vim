@@ -78,3 +78,5 @@ set splitbelow
 set splitright
 
 syntax on  "syntax highlight
+
+set maxfuncdepth=1000  "関数の再帰呼び出し回数の上限
