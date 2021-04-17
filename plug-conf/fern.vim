@@ -29,7 +29,7 @@ endfunction
 "let g:fern#disable_default_mappings = 1
 
 "noremap <silent> q :Fern . -reveal=% -drawer -toggle<CR><C-w>=
-noremap <silent> q :Fern . -reveal=%<CR><C-w>=
+"noremap <silent> <tab> :Fern . -reveal=%<CR><C-w>=
 
 function! FernInit() abort
   nmap <buffer><expr>

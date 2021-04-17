@@ -12,10 +12,12 @@ nnoremap <up> gk
 
 noremap <C-n> :bnext<CR>
 noremap <C-p> :bprev<CR>
-noremap <C-j> :bnext<CR>
-noremap <C-k> :bprev<CR>
-noremap <C-h> :bfirst<CR>
-noremap <C-l> :blast<CR>
+noremap ]b :bnext<CR>
+noremap [b :bprev<CR>
+"noremap <C-j> :bnext<CR>
+"noremap <C-k> :bprev<CR>
+"noremap <C-h> :bfirst<CR>
+"noremap <C-l> :blast<CR>
 
 "insert mode中Ctrl+hjklで移動
 inoremap <C-h> <Left>
@@ -70,4 +72,4 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 " noremap <Leader>w :q<CR>
 
 "文字列検索
-nnoremap <silent><tab><tab> :<C-u>set nohlsearch!<CR>  " tabキー2度押しでハイライトの切り替え
+nnoremap <silent><esc><esc> :<C-u>set nohlsearch!<CR>  " tabキー2度押しでハイライトの切り替え

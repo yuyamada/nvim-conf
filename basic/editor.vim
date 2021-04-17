@@ -51,7 +51,7 @@ set wildmenu " コマンドモードの補完
 set history=5000 " 保存するコマンド履歴の数
 
 " クリップボード連携
-set clipboard+=unnamed
+"set clipboard+=unnamed
 
 " ペースト時の自動インデントを無効化
 if &term =~ "xterm"
@@ -72,11 +72,8 @@ endif
 "   set autochdir
 " endif
 
-" 新しいウィンドウを下に開く
-set splitbelow
-" 新しいウィンドウを右に開く
-set splitright
+set splitbelow  " 新しいウィンドウを下に開く
+set splitright  " 新しいウィンドウを右に開く
 
 syntax on  "syntax highlight
-
 set maxfuncdepth=1000  "関数の再帰呼び出し回数の上限
