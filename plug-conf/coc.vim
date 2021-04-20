@@ -58,9 +58,13 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gp <Plug>(coc-diagnostic-prev)
+nmap <silent> gn <Plug>(coc-diagnostic-next)
+
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -98,13 +102,13 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
+" nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -151,21 +155,21 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " coc-go
 autocmd FileType go nmap gtj :CocCommand go.tags.add json<cr>
@@ -175,29 +179,30 @@ autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
 
 " coc-fzf-preview
 let g:fzf_preview_use_dev_icons = 1
-let g:fzf_preview_command = 'bat --color always --plain {-1}'
+let g:fzf_preview_command = 'bat --theme ansi --color always --plain {-1}'
 "let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap' }
 let g:fzf_preview_default_fzf_options = { '--reverse': v:true }
 
 "nmap <Leader> [fzf-p]
 "xmap <leader>f [fzf-p]
-nnoremap <silent> <leader><leader>     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+" nnoremap <silent> <leader><leader>     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent> <leader><leader> :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
 nnoremap <silent> <leader>gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
 nnoremap <silent> <leader>ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
 nnoremap <silent> <leader>b     :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap <silent> <leader>B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+" nnoremap <silent> <leader>B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
 nnoremap <silent> <leader>o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
-nnoremap <silent> <leader><C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
-nnoremap <silent> <leader>g;    :<C-u>CocCommand fzf-preview.Changes<CR>
-nnoremap <silent> <leader>/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
-nnoremap <silent> <leader>*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          <leader>gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
-xnoremap          <leader>gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+" nnoremap <silent> <leader><C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+" nnoremap <silent> <leader>g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+" nnoremap <silent> <leader>/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+" nnoremap <silent> <leader>*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          <leader>e    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          <leader>e    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
 nnoremap <silent> <leader>t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
 nnoremap <silent> <leader>q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
 nnoremap <silent> <leader>l     :<C-u>CocCommand fzf-preview.LocationList<CR>
 nnoremap <silent> <leader>rf    :<C-u>CocCommand fzf-preview.CocReferences<CR>
-nnoremap <silent> <leader>d    :<C-u>CocCommand fzf-preview.CocDiagnostics<CR>
-nnoremap <silent> <leader>d    :<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
+nnoremap <silent> <leader>a    :<C-u>CocCommand fzf-preview.CocDiagnostics<CR>
+" nnoremap <silent> <leader>a    :<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
 nnoremap <silent> <leader>y    :<C-u>CocCommand fzf-preview.CocTypeDefinitions<CR>
 nnoremap <silent> <leader>i    :<C-u>CocCommand fzf-preview.CocImplementations<CR>
