@@ -23,13 +23,13 @@ Plug 'itchyny/lightline.vim'  "ステータスラインの表示内容強化
 Plug 'Yggdroot/indentLine'  "インデントの可視化
 "Plug 'scrooloose/nerdtree'  "ファイルをtree表示
 "Plug 'jistr/vim-nerdtree-tabs' "タブページでtreeを同期
-" Plug 'lambdalisue/fern.vim'  " ファイラ
-" Plug 'antoinemadec/FixCursorHold.nvim'
-" Plug 'lambdalisue/nerdfont.vim'
-" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-" Plug 'lambdalisue/fern-hijack.vim'
+Plug 'lambdalisue/fern.vim'  " ファイラ
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern-hijack.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'  "あいまい検索
+Plug 'junegunn/fzf.vim'  "あいまい検索
 Plug 'kana/vim-submode' " ウィンドウ関連サブモードを定義
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'scrooloose/syntastic'  "シンタックスハイライト
