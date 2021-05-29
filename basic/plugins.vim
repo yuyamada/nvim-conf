@@ -56,6 +56,7 @@ Plug 'tpope/vim-surround'  "開き/閉じカッコをまとめて選択
 Plug 'tpope/vim-commentary'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
