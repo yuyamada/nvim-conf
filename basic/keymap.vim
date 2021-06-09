@@ -27,7 +27,7 @@ inoremap <C-l> <Right>
 
 "行頭・行末移動
 noremap <C-a> ^
-noremap <C-e> $
+noremap <C-e> $<Right>
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 
@@ -73,3 +73,9 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
 "文字列検索
 nnoremap <silent><esc><esc> :<C-u>set nohlsearch!<CR>  " tabキー2度押しでハイライトの切り替え
+
+"delete without cut
+nnoremap x "_x
+nnoremap d "_d
+nnoremap p P
+

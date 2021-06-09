@@ -58,8 +58,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gp <Plug>(coc-diagnostic-prev)
-nmap <silent> gn <Plug>(coc-diagnostic-next)
+" nmap <silent> gp <Plug>(coc-diagnostic-prev)
+" nmap <silent> gn <Plug>(coc-diagnostic-next)
 
 
 " GoTo code navigation.
@@ -68,6 +68,7 @@ nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <leader>r <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -144,9 +145,8 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " import/format on save
-autocmd BufWritePre *.go :call CocAction('format')
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-
+autocmd BufWritePre *.go :Format
+autocmd BufWritePre *.go silent! :OR
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
@@ -182,27 +182,28 @@ let g:fzf_preview_use_dev_icons = 1
 let g:fzf_preview_command = 'bat --theme ansi --color always --plain {-1}'
 "let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap' }
 let g:fzf_preview_default_fzf_options = { '--reverse': v:true }
+let g:fzf_preview_window = ['up:40%', 'ctrl-/']
 
 "nmap <Leader> [fzf-p]
 "xmap <leader>f [fzf-p]
 " nnoremap <silent> <leader><leader>     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <silent> <leader><leader> :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
-nnoremap <silent> <leader>gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> <leader>ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> <leader>b     :<C-u>CocCommand fzf-preview.Buffers<CR>
-" nnoremap <silent> <leader>B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nnoremap <silent> <leader>o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
-" nnoremap <silent> <leader><C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
-" nnoremap <silent> <leader>g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+" nnoremap <silent> <leader><leader> :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
+" nnoremap <silent> <leader>gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+" nnoremap <silent> <leader>ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+" nnoremap <silent> <leader>b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+" " nnoremap <silent> <leader>B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+" nnoremap <silent> <leader>o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+" " nnoremap <silent> <leader><C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+" " nnoremap <silent> <leader>g;    :<C-u>CocCommand fzf-preview.Changes<CR>
 " nnoremap <silent> <leader>/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
 " nnoremap <silent> <leader>*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          <leader>e    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
-xnoremap          <leader>e    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-nnoremap <silent> <leader>t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
-nnoremap <silent> <leader>q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> <leader>l     :<C-u>CocCommand fzf-preview.LocationList<CR>
-nnoremap <silent> <leader>rf    :<C-u>CocCommand fzf-preview.CocReferences<CR>
-nnoremap <silent> <leader>a    :<C-u>CocCommand fzf-preview.CocDiagnostics<CR>
-" nnoremap <silent> <leader>a    :<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
-nnoremap <silent> <leader>y    :<C-u>CocCommand fzf-preview.CocTypeDefinitions<CR>
-nnoremap <silent> <leader>i    :<C-u>CocCommand fzf-preview.CocImplementations<CR>
+" nnoremap          <leader>e    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+" xnoremap          <leader>e    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+" nnoremap <silent> <leader>t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+" nnoremap <silent> <leader>q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+" nnoremap <silent> <leader>l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+" nnoremap <silent> <leader>rf    :<C-u>CocCommand fzf-preview.CocReferences<CR>
+" nnoremap <silent> <leader>a    :<C-u>CocCommand fzf-preview.CocDiagnostics<CR>
+" " nnoremap <silent> <leader>a    :<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
+" nnoremap <silent> <leader>y    :<C-u>CocCommand fzf-preview.CocTypeDefinitions<CR>
+" nnoremap <silent> <leader>i    :<C-u>CocCommand fzf-preview.CocImplementations<CR>
