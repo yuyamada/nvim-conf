@@ -77,5 +77,3 @@ nnoremap <silent><esc><esc> :<C-u>set nohlsearch!<CR>  " tabキー2度押しで�
 "delete without cut
 nnoremap x "_x
 nnoremap d "_d
-nnoremap p P
-
