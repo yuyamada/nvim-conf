@@ -27,8 +27,8 @@ inoremap <C-l> <Right>
 
 "行頭・行末移動
 noremap <C-a> ^
-" noremap <C-e> $<Right>
-noremap <C-e> $
+noremap <C-e> $<Right>
+" noremap <C-e> $
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 
