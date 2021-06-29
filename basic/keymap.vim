@@ -28,6 +28,7 @@ inoremap <C-l> <Right>
 "行頭・行末移動
 noremap <C-a> ^
 noremap <C-e> $<Right>
+" noremap <C-e> $
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 
@@ -78,5 +79,3 @@ nnoremap <silent><esc><esc> :<C-u>set nohlsearch!<CR>  " tabキー2度押しで�
 "delete without cut
 nnoremap x "_x
 nnoremap d "_d
-nnoremap p P
-
