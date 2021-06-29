@@ -36,6 +36,7 @@ noremap <C-d> i<BS>
 inoremap <C-d> <BS>
 noremap <C-m> i<CR>
 inoremap <C-m> <CR>
+noremap <BS> i<BS>
 
 "タブ移動
 nnoremap s <Nop>

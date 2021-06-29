@@ -8,11 +8,11 @@ set ambiwidth=double " □や○文字が崩れる問題を解決
 
 "タブ, インデント
 set expandtab " タブ入力を複数の空白入力に置き換える
-set tabstop=4 " 画面上でタブ文字が占める幅
-set softtabstop=4 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set tabstop=2 " 画面上でタブ文字が占める幅
+set softtabstop=2 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 set autoindent " 改行時に前の行のインデントを継続する
 set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
-set shiftwidth=4 " smartindentで増減する幅
+set shiftwidth=2 " smartindentで増減する幅
 " tab/空白/改行を可視化
 set list
 "set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
@@ -77,3 +77,7 @@ set splitright  " 新しいウィンドウを右に開く
 
 syntax on  "syntax highlight
 set maxfuncdepth=1000  "関数の再帰呼び出し回数の上限
+
+" digファイルをymlとして読み込む
+autocmd BufNewFile,BufRead *.dig set filetype=yaml
+autocmd Syntax yaml setl indentkeys-=<:> indentkeys-=0#
