@@ -38,7 +38,7 @@ Plug 'kana/vim-submode' " ウィンドウ関連サブモードを定義
 "Plug 'zxqfl/tabnine-vim'  "自動補完
 "Plug 'tell-k/vim-autopep8'  "python
 "Plug 'fatih/vim-go'  "golang
-"Plug 'elzr/vim-json'  "json
+Plug 'elzr/vim-json'  "json
 "Plug 'rhysd/vim-clang-format'  "c/c++ formatter
 "Plug 'quark-zju/vim-cpp-auto-include'  "c/c++ auto include
 " Plug 'prabirshrestha/async.vim'
