@@ -145,8 +145,8 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " import/format on save
-autocmd BufWritePre *.go :Format
-autocmd BufWritePre *.go silent! :OR
+autocmd BufWritePre * :Format
+autocmd BufWritePre * silent! :OR
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that

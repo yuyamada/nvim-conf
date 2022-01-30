@@ -31,6 +31,7 @@ endfunction
 " noremap <silent> q :Fern . -reveal=% -drawer -toggle<CR><C-w>=
 " noremap <silent> <tab> :Fern . -reveal=%<CR><C-w>=
 noremap <silent> q :Fern . -reveal=%<CR><C-w>=
+nnoremap <C-q> q
 
 function! FernInit() abort
   nmap <buffer><expr>
