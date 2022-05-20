@@ -11,6 +11,8 @@ let g:loaded_netrwFileHandlers = 1
 "nerd font
 let g:fern#renderer = "nerdfont"
 
+let g:fern#default_hidden=1
+
 augroup my-fern-hijack
   autocmd!
   autocmd BufEnter * ++nested call s:hijack_directory()
